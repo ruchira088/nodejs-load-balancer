@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-load-balancer",
+  "version": "0.0.1",
+  "description": "Load balancer written in NodeJS",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "nodemon --inspect=0.0.0.0:5858 .",
+    "start": "node ."
+  },
+  "author": "Ruchira Jayasekara <ruchira088@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
