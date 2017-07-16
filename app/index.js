@@ -5,6 +5,7 @@ const redisUtils = require("./redisUtils")
 
 const {name, description, version} = require("../package.json")
 const {getNodesRouter} = require("./nodesRouter")
+const {getProxyRouter} = require("./proxyRouter")
 
 const {PORT = 8000} = process.env
 
@@ -24,6 +25,7 @@ Promise
     .then(([redisClient]) =>
     {
         app.use("/nodes", getNodesRouter(redisClient))
+        app.use(getProxyRouter(redisClient))
 
         http.createServer(app)
             .listen(PORT, () => {

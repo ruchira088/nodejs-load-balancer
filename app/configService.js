@@ -12,7 +12,7 @@ const getNodes = redisClient =>
         .then(results => results === null ? [] : results)
 
 const verifyNode = node =>
-    axios.get(node.url)
+    axios.get(`${node.url}/app-info`)
         .then(() =>
         {
             console.log(`${node.url} is online`)
